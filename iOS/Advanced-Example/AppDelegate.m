@@ -54,7 +54,7 @@ didFinishLaunchingWithOptions:(__unused NSDictionary *) launchOptions
 
     self.crashInstallation = [self makeConsoleInstallation];
     //    self.crashInstallation = [self makeStandardInstallation];
-    //    self.crashInstallation = [self makeEmailInstallation];
+        self.crashInstallation = [self makeEmailInstallation];
     //    self.crashInstallation = [self makeHockeyInstallation];
     //    self.crashInstallation = [self makeQuincyInstallation];
     //    self.crashInstallation = [self makeVictoryInstallation];
@@ -78,7 +78,7 @@ didFinishLaunchingWithOptions:(__unused NSDictionary *) launchOptions
 
 - (KSCrashInstallation*) makeEmailInstallation
 {
-    NSString* emailAddress = @"your@email.here";
+    NSString* emailAddress = @"wlong108@aliyun.com";
     
     KSCrashInstallationEmail* email = [KSCrashInstallationEmail sharedInstance];
     email.recipients = @[emailAddress];
@@ -171,7 +171,7 @@ static void advanced_crash_callback(const KSCrashReportWriter* writer)
     
     // Settings in KSCrash.h
     handler.deadlockWatchdogInterval = 8;
-    handler.userInfo = @{@"someKey": @"someValue"};
+    handler.userInfo = @{@"name": @"wjl"};
     handler.onCrash = advanced_crash_callback;
     handler.monitoring = KSCrashMonitorTypeProductionSafe;
 

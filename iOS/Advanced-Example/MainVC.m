@@ -79,6 +79,7 @@
 
     [appDelegate.crashInstallation sendAllReportsWithCompletion:^(NSArray *filteredReports, BOOL completed, NSError *error) {
         if(completed) {
+            NSLog(@"send success");
             NSLog(@"\n****Sent %lu reports", (unsigned long)[filteredReports count]);
             NSLog(@"\n%@", filteredReports);
             //        [[KSCrash sharedInstance] deleteAllReports];

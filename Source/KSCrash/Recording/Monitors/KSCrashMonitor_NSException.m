@@ -34,7 +34,7 @@
 
 //#define KSLogger_LocalLevel TRACE
 #import "KSLogger.h"
-
+#import "KSLog.h"
 
 // ============================================================================
 #pragma mark - Globals -
@@ -59,7 +59,8 @@ static NSUncaughtExceptionHandler* g_previousUncaughtExceptionHandler;
  */
 
 static void handleException(NSException* exception, BOOL currentSnapshotUserReported) {
-    KSLOG_DEBUG(@"Trapped exception %@", exception);
+    KSLOG_DEBUG(@"%s %@",__func__, exception);
+    KSLog("Trapped exception %s",exception.name.UTF8String);
     if(g_isEnabled)
     {
         ksmc_suspendEnvironment();

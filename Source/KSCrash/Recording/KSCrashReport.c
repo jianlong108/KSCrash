@@ -58,6 +58,8 @@
 #include <unistd.h>
 #include <sys/time.h>
 
+#include "KSLog.h"
+
 // ============================================================================
 #pragma mark - Constants -
 // ============================================================================
@@ -1771,6 +1773,7 @@ void kscrashreport_writeStandardReport(const KSCrash_MonitorContext* const monit
         }
         if(g_userSectionWriteCallback != NULL)
         {
+            KSLog("%s path=%s",__func__,path);
             ksfu_flushBufferedWriter(&bufferedWriter);
             if (monitorContext->currentSnapshotUserReported == false) {
                 g_userSectionWriteCallback(writer);

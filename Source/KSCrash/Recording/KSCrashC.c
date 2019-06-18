@@ -50,6 +50,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "KSLog.h"
+
 typedef enum
 {
     KSApplicationStateNone,
@@ -122,8 +124,10 @@ static void notifyOfBeforeInstallationState(void)
  */
 static void onCrash(struct KSCrash_MonitorContext* monitorContext)
 {
+    KSLOG_TRACE("on crash.");
+    KSLog("on crash.");
     if (monitorContext->currentSnapshotUserReported == false) {
-        KSLOG_DEBUG("Updating application state to note crash.");
+        KSLOG_TRACE("Updating application state to note crash.");
         kscrashstate_notifyAppCrash();
     }
     monitorContext->consoleLogPath = g_shouldAddConsoleLogToReport ? g_consoleLogPath : NULL;
@@ -154,10 +158,11 @@ static void onCrash(struct KSCrash_MonitorContext* monitorContext)
 KSCrashMonitorType kscrash_install(const char* appName, const char* const installPath)
 {
     KSLOG_DEBUG("Installing crash reporter.");
-
+    KSLog("Installing crash reporter.");
     if(g_installed)
     {
         KSLOG_DEBUG("Crash reporter already installed.");
+        KSLog("Crash reporter already installed.");
         return g_monitoring;
     }
     g_installed = 1;
@@ -184,6 +189,7 @@ KSCrashMonitorType kscrash_install(const char* appName, const char* const instal
     kscm_setEventCallback(onCrash);
     KSCrashMonitorType monitors = kscrash_setMonitoring(g_monitoring);
 
+    KSLog("Installation complete.");
     KSLOG_DEBUG("Installation complete.");
 
     notifyOfBeforeInstallationState();
@@ -197,6 +203,7 @@ KSCrashMonitorType kscrash_setMonitoring(KSCrashMonitorType monitors)
     
     if(g_installed)
     {
+        KSLog("%s",__func__);
         kscm_setActiveMonitors(monitors);
         return kscm_getActiveMonitors();
     }

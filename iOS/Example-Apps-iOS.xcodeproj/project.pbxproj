@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68AF677722B7C4CC00B536BE /* KSCrash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68AF677622B7C4CC00B536BE /* KSCrash.framework */; };
 		CB0C95651C5BF3F400166B50 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C95641C5BF3F400166B50 /* libc++.tbd */; };
 		CB0C95661C5BF40700166B50 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC43EB41C5AC11F0083A11B /* libz.tbd */; };
 		CB0C95671C5BF8DA00166B50 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB0C95641C5BF3F400166B50 /* libc++.tbd */; };
@@ -46,7 +47,6 @@
 		CBF3CDF417F574B6001AC307 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF3CDF317F574B6001AC307 /* Images.xcassets */; };
 		CBF3CE1117F5754B001AC307 /* LoaderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF3CE0E17F5754B001AC307 /* LoaderVC.m */; };
 		CBF3CE1217F5754B001AC307 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF3CE1017F5754B001AC307 /* MainVC.m */; };
-		CBF3CE1417F57601001AC307 /* libKSCrashLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF3CE1317F57601001AC307 /* libKSCrashLib.a */; };
 		CBF3CE1517F57609001AC307 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB62400417EBB2D2006471F1 /* MessageUI.framework */; };
 		CBF3CE1617F57610001AC307 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB62400617EBB2D7006471F1 /* SystemConfiguration.framework */; };
 		CBF3CE1F17F576C0001AC307 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB8E576617EBB16D000C56D3 /* Foundation.framework */; };
@@ -108,6 +108,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		68AF677622B7C4CC00B536BE /* KSCrash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = KSCrash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB02647717F69E8A003E0AED /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = SOURCE_ROOT; };
 		CB0C95641C5BF3F400166B50 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		CB62400017EBB2C9006471F1 /* libKSCrashLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libKSCrashLib.a; path = "build/Debug-iphoneos/libKSCrashLib.a"; sourceTree = "<group>"; };
@@ -212,11 +213,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68AF677722B7C4CC00B536BE /* KSCrash.framework in Frameworks */,
 				CB0C95681C5BF8E300166B50 /* libz.tbd in Frameworks */,
 				CB0C95671C5BF8DA00166B50 /* libc++.tbd in Frameworks */,
 				CBF3CE1617F57610001AC307 /* SystemConfiguration.framework in Frameworks */,
 				CBF3CE1517F57609001AC307 /* MessageUI.framework in Frameworks */,
-				CBF3CE1417F57601001AC307 /* libKSCrashLib.a in Frameworks */,
 				CBF3CDDF17F574B5001AC307 /* CoreGraphics.framework in Frameworks */,
 				CBF3CDE017F574B5001AC307 /* UIKit.framework in Frameworks */,
 				CBF3CDDE17F574B5001AC307 /* Foundation.framework in Frameworks */,
@@ -271,6 +272,7 @@
 		CB8E576517EBB16D000C56D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				68AF677622B7C4CC00B536BE /* KSCrash.framework */,
 				CB8F1DCA1CCAF0C30022CDF0 /* KSCrash.framework */,
 				CB0C95641C5BF3F400166B50 /* libc++.tbd */,
 				CBC43EB41C5AC11F0083A11B /* libz.tbd */,
@@ -500,8 +502,16 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Karl Stenerud";
 				TargetAttributes = {
+					CB8E579E17EBB1AF000C56D3 = {
+						DevelopmentTeam = YMJ372W38W;
+						ProvisioningStyle = Manual;
+					};
 					CBC43E9C1C5ABA1F0083A11B = {
 						LastSwiftMigration = 0810;
+					};
+					CBF3CDDC17F574B5001AC307 = {
+						DevelopmentTeam = YMJ372W38W;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -510,6 +520,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -821,6 +832,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = YMJ372W38W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Simple-Example/Simple-Example-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -830,8 +844,9 @@
 				INFOPLIST_FILE = "Simple-Example/Simple-Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.stenerud.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.AMapFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -841,13 +856,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Simple-Example/Simple-Example-Prefix.pch";
 				INFOPLIST_FILE = "Simple-Example/Simple-Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.stenerud.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.AMapFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -911,6 +930,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = YMJ372W38W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Advanced-Example/Advanced-Example-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -920,8 +941,9 @@
 				INFOPLIST_FILE = "Advanced-Example/Advanced-Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.stenerud.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.AMapFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = openPlatform_development;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -931,13 +953,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Advanced-Example/Advanced-Example-Prefix.pch";
 				INFOPLIST_FILE = "Advanced-Example/Advanced-Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.stenerud.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonavi.AMapFoundationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

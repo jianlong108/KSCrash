@@ -68,7 +68,7 @@ didFinishLaunchingWithOptions:(__unused NSDictionary *) launchOptions
 
 - (KSCrashInstallation*) makeEmailInstallation
 {
-    NSString* emailAddress = @"your@email.here";
+    NSString* emailAddress = @"wlong108@aliyun.com";
     
     KSCrashInstallationEmail* email = [KSCrashInstallationEmail sharedInstance];
     email.recipients = @[emailAddress];
